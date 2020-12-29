@@ -1,7 +1,8 @@
-@mixin flexCentered() {
+@mixin flexCentered($direction) {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: $direction;
 }
 
 @mixin absoluteCentered() {
@@ -21,4 +22,12 @@
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
+}
+
+@mixin fixed($top, $right, $bottom, $left) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
 }

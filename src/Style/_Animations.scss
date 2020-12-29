@@ -1,21 +1,31 @@
+//BOOKS_PAGE
 @keyframes books-page{
     0%{}
     100%{rotate: y -180deg}
 }
-
 @mixin page-scroll () {
     animation: books-page 3s infinite;
     -webkit-animation: books-page 3s infinite;
     transform-origin: 0% 0%;
 }
 
+//BLINK
 @keyframes blinking{
     0%{opacity: 0;}
     50%{opacity: 1;}
     100%{opacity: 0;}
 }
-
 @mixin blink-loader {
     animation: blinking 2s infinite linear;
     -webkit-animation: blinking 2s infinite linear;
+}
+
+//SHOW WELCOME
+@keyframes show {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@mixin showWelcome{
+    animation: show 5s ease;
+    -webkit-animation: show 5s ease;
 }

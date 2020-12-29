@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {HashRouter as Router} from 'react-router-dom'
 import RouterWeb from './Components/__MAIN/RouterWeb/RouterWeb';
+import './Utilities/OnScroll/OnScroll'
 
 ReactDOM.render(
   <React.StrictMode>
