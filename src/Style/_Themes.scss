@@ -1,0 +1,30 @@
+@mixin fantasy (){
+    background-color:#25bea0;
+    color: #374353;
+    border-color: #374353;
+}
+
+@mixin history () {
+    background-color: #ff4838;
+    color: #162b32;
+    border-color: #ff4838;
+}
+
+@mixin horror () {
+    background-color: #020000;
+    color: #dd2424;
+    border-color: #4d0000;
+}
+
+@mixin romance () {
+    background-color: #fbc8d6;
+    color: #f70424;
+    border-color: #f0a1a5;
+}
+
+@mixin scifi () {
+    background-color: #01012b;
+    color: #d1f7ff;
+    -webkit-text-stroke-color: #05d9e8;
+    border-color: #ff2a6d;
+}

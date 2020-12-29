@@ -1,0 +1,70 @@
+@import '../../../Style/Themes', 
+    '../../../Style/Positions',
+    '../../../Style/Animations',
+    '../../../Style/Sizes';
+.loader{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba($color: black, $alpha: .1);
+    .page-loader{
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        perspective: 1000px;
+        z-index: 1;
+        @include absoluteCentered();
+        .page{
+            @include page-scroll();
+            width: 50%;
+            height: 100%;
+            transform-style: preserve-3d;
+            position: absolute;
+            right: 0;
+            .front, .back{
+                @include full();
+                position: absolute;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+            }
+            .front{
+                h2{
+                    @include absoluteCentered();
+                    font-size: 2rem;
+                    font-weight: 700
+                }
+            }
+            .back{
+                @include backFace();
+                z-index: 10;
+            }
+        }
+        .page:nth-of-type(1){.front,.back{@include fantasy();}}
+        .page:nth-of-type(2){.front,.back{@include history();}}
+        .page:nth-of-type(3){.front,.back{@include horror();}}
+        .page:nth-of-type(4){.front,.back{@include romance();}}
+        .page:nth-of-type(5){.front,.back{@include scifi();}}
+    
+        @for $page from 0 to 6 {
+            .page:nth-of-type(#{$page}){
+                animation-delay: $page * .4s;
+            }
+        }
+        .categories{
+            width: 100%;
+            height: 2rem;
+            margin: 0;
+            position: absolute;
+            left: 0;
+            bottom: -4rem;
+            p{
+                @include absoluteCentered();
+                @include blink-loader();
+                margin: 0;
+                opacity: 0;
+                font-weight: 700;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
