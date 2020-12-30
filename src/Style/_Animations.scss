@@ -25,7 +25,49 @@
     0%{opacity: 0;}
     100%{opacity: 1;}
 }
-@mixin showWelcome{
-    animation: show 5s ease;
-    -webkit-animation: show 5s ease;
+@mixin show($duration){
+    animation: show $duration ease;
+    -webkit-animation: show $duration ease;
+}
+
+//BUY BOOK
+@keyframes buyBook{
+    0%{rotate: y 0deg;}
+    50%{margin-top: 3rem;}
+    100%{margin-top: -500vh;}
+}
+@mixin slideBook(){
+    animation: buyBook 3s ease;
+    -webkit-animation: buyBook 3s ease;
+}
+.bought{
+    @include slideBook();
+}
+
+//ONSCROLL ANIMATIONS
+.slideX{
+    margin-left: 0 !important;
+    transition: margin-left 1s ease;
+    -webkit-transition: margin-left 1s ease;
+    -moz-transition: margin-left 1s ease;
+    -ms-transition: margin-left 1s ease;
+    -o-transition: margin-left 1s ease;
+}
+
+.slideY{
+    margin-top: 0 !important;
+    transition: margin-top 1s ease;
+    -webkit-transition: margin-top 1s ease;
+    -moz-transition: margin-top 1s ease;
+    -ms-transition: margin-top 1s ease;
+    -o-transition: margin-top 1s ease;
+}
+
+.scrollShow{
+    opacity: 1 !important;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    -ms-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
 }

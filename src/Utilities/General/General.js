@@ -9,6 +9,6 @@ export const pickRandom = (array) => {
 export const findObjbyIndex = (array, index) => {
     let selected = {}
     selected = array[index]
-    console.log(selected)
+    // console.log(selected)
     return selected
 }

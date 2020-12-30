@@ -1,0 +1,54 @@
+@import '../../../Style/Positions',
+    '../../../Style/Prop-Compatibilities';
+.book-container{
+    width: 100%;
+    height: 100%;
+    @include flexCentered(row);
+    perspective: 400px;
+    transform-style: preserve-3d;
+    .book{
+        width: 200px;
+        height: 300px;
+        rotate: y -30deg;
+        position: relative;
+        box-shadow: 20px 20px 20px rgba($color: black, $alpha: .3);
+        transform-style: preserve-3d;
+        @include transition(all, 1s, ease);
+        img{
+            width: 200px;
+            height: 300px;
+            background-color: black;
+            z-index: 10;
+            border: 1px black solid;
+        }
+        &::before{
+            content: ' ';
+            width: 30px;
+            height: calc(100% - 8%);
+            position: absolute;
+            background-color: #ffffff;
+            border: 1px solid black;
+            top: 4%;
+            right: -9.5%;
+            rotate: y 90deg;
+            @include transition(all, 1s, ease);
+        }
+        &::after{
+            content: ' ';
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 300px;
+            background-color:rgba($color:black,$alpha: .7);
+            @include translate(-40px, 0, 0);
+        }
+        &:hover{
+            rotate: y 0deg;
+            box-shadow: 0 0 25px black;
+            transform-style: initial;
+            &::before{
+                right: -8%;
+            }
+        }
+    }
+}
