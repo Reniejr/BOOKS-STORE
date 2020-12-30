@@ -4,7 +4,7 @@ import './PageLoader.scss'
 export default class PageLoader extends PureComponent {
     render() {
         return (
-            <div className="loader" style={{opacity : this.props.loader? '1' : '0'}}>
+            <div className="loader" style={{opacity : this.props.loader? '1' : '0', zIndex: this.props.loader? '100' : '-1'}}>
                 <div className='page-loader'>
                     <div className="page">
                         <div className="front">

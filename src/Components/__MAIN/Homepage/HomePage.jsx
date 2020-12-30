@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import Jumbotron from '../../HomePage_SubComponents/Jumbotron/Jumbotron'
 import './HomePage.scss'
 import Category from '../../HomePage_SubComponents/Categories/Category'
-import {Row, Col} from 'react-bootstrap'
 import Footer from '../../_GENERAL_SUB_COMPONENTS/Footer/Footer'
 import PageLoader from '../../_GENERAL_SUB_COMPONENTS/PageLoader/PageLoader'
 import { homeBooksAnimation } from '../../../Utilities/OnScroll/OnScroll'
@@ -17,7 +16,7 @@ export default class HomePage extends PureComponent {
     goToCategoryPage = (category) => {
         this.setState({loader : true})
         setTimeout(() => {
-            this.props.history.push('category/' + category)
+            this.props.history.push('/category/' + category)
         }, 2000)
     }
 
@@ -25,6 +24,9 @@ export default class HomePage extends PureComponent {
         window.onscroll = () => {
             homeBooksAnimation()
         }
+    }
+    componentWillUnmount(){
+        window.onscroll = () => null
     }
 
     render() {
@@ -34,24 +36,24 @@ export default class HomePage extends PureComponent {
                 <PageLoader loader={this.state.loader}/>
                 <Jumbotron/>
                 <Category
-                linkFunc = {this.goToCategoryPage}
                 category='fantasy'
+                linkFunc={()=>this.goToCategoryPage('fantasy')}
                 />
                 <Category
-                linkFunc = {this.goToCategoryPage}
                 category='history'
+                linkFunc={()=>this.goToCategoryPage('history')}
                 />
                 <Category
-                linkFunc = {this.goToCategoryPage}
                 category='horror'
+                linkFunc={()=>this.goToCategoryPage('horror')}
                 />
                 <Category
-                linkFunc = {this.goToCategoryPage}
                 category='romance'
+                linkFunc={()=>this.goToCategoryPage('romance')}
                 />
                 <Category
-                linkFunc = {this.goToCategoryPage}
                 category='scifi'
+                linkFunc={()=>this.goToCategoryPage('scifi')}
                 />
                 <Footer/>
             </div>

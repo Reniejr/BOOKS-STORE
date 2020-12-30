@@ -9,7 +9,7 @@ import './Utilities/OnScroll/OnScroll'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename='/BOOKS-STORE/#/'>
+    <Router>
         <RouterWeb/>
     </Router>
   </React.StrictMode>,

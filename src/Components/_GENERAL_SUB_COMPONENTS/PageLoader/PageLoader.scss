@@ -5,8 +5,9 @@
 .loader{
     width: 100%;
     height: 100%;
-    position: absolute;
-    background-color: rgba($color: black, $alpha: .1);
+    position: fixed;
+    top: 0;
+    background-color: rgba($color: white, $alpha: .8);
     .page-loader{
         width: 400px;
         height: 200px;

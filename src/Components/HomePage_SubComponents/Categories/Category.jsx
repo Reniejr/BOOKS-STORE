@@ -29,7 +29,6 @@ export default class Category extends PureComponent {
         }, 3000)
     }
 
-    
 
     componentDidMount = async () => {
         await this.getBooks(this.props.category)
