@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import './Navbar.scss'
 import '../../../Style/_ClassStyles.scss'
+import {Link} from 'react-router-dom'
 
 export default class Navbar extends PureComponent {
     render() {
@@ -12,10 +13,18 @@ export default class Navbar extends PureComponent {
                 </div>
                 <div className="menu">
                     <ul>
-                        <li>Home</li>
-                        <li>Categories</li>
-                        <li>Best Seller</li>
-                        <li>New Upcoming</li>
+                        <li>
+                            <Link to='/'>Home</Link>
+                        </li>
+                        <li>
+                            Categories
+                        </li>
+                        <li>
+                            <Link to='/best-seller'>Best Seller</Link>
+                        </li>
+                        <li>
+                            <Link to='/new-upcoming'>New Upcoming</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className="search-container">

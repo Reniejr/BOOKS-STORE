@@ -4,7 +4,7 @@ import './HomePage.scss'
 import Category from '../../HomePage_SubComponents/Categories/Category'
 import Footer from '../../_GENERAL_SUB_COMPONENTS/Footer/Footer'
 import PageLoader from '../../_GENERAL_SUB_COMPONENTS/PageLoader/PageLoader'
-import { homeBooksAnimation } from '../../../Utilities/OnScroll/OnScroll'
+import { homeBooksAnimation, navScroll } from '../../../Utilities/OnScroll/OnScroll'
 
 
 export default class HomePage extends PureComponent {
@@ -23,6 +23,7 @@ export default class HomePage extends PureComponent {
     componentDidMount(){
         window.onscroll = () => {
             homeBooksAnimation()
+            navScroll()
         }
     }
     componentWillUnmount(){

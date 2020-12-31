@@ -7,6 +7,7 @@ import Navbar from '../../_GENERAL_SUB_COMPONENTS/Navbar/Navbar'
 import CategoryPage from '../CategoryPage/CategoryPage'
 
 export default class RouterWeb extends PureComponent {
+
     render() {
         return (
             <>

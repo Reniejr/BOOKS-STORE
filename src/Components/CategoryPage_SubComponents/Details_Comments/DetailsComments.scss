@@ -1,0 +1,5 @@
+@import '../../../Style/Positions';
+.preview{
+    @include flexCentered(column);
+    
+}

@@ -71,3 +71,16 @@
     -ms-transition: opacity 1s ease;
     -o-transition: opacity 1s ease;
 }
+
+@mixin fixedPosition($top, $right, $bottom, $left) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+.detailFixed{
+    @include fixedPosition(48px, 2rem, none, none);
+    width: calc(100% / 12 * 4);
+}

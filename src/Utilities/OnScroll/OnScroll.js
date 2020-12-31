@@ -8,12 +8,10 @@ export const inRangeY = (elem, classAnimation) => {
         boundSelected.bottom <= (window.innerHeight || document.documentElement.clientHeightinnerHeight)
     ){
         selected.classList.add(classAnimation)
-        // console.log('In VH')
-    }else if(
-        y_axis === 0 || y_axis === maxScroll
-    ){
+        // console.log(y_axis)
+    }
+    if(y_axis === 0 || y_axis === maxScroll){
         selected.classList.remove(classAnimation)
-        // console.log('restart animations')
     }
 
 }
@@ -28,7 +26,11 @@ export const homeBooksAnimation = () => {
     inRangeY('#homepage .category:nth-of-type(7) .show-book', 'slideX')
 }
 
-window.onscroll = () => {
+export const categoryPageScroll = () => {
+    inRangeY('.preview', 'detailFixed')
+}
+
+export const navScroll = () => {
     let x_axis = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
         y_axis = document.documentElement.scrollTop || document.body.scrollTop || 0
     //NAVBAR
@@ -37,5 +39,5 @@ window.onscroll = () => {
     ? navBar.classList.add('transparent')
     : navBar.classList.remove('transparent')
     // console.log(x_axis, y_axis)
-    //**********************
 }
+

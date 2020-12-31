@@ -1,3 +1,4 @@
+@import './Prop-Compatibilities';
 @mixin fantasy (){
     background-color:#25bea0;
     color: #374353;
@@ -5,6 +6,25 @@
 }
 .fantasy{
     @include fantasy();
+    button{
+        font-weight: 600;
+        background-color: white;
+        border: #374353 2px solid;
+        @include borderRadius(5px);
+        &:hover{
+            background-color: rgba($color: #25bea0, $alpha: .5)
+        }
+    }
+    h3{
+        color: #374353;
+        -webkit-text-stroke: .5px #25bea0;
+    }
+    .book{
+        box-shadow: 10px 10px 20px rgba($color: #25bea0, $alpha: .5);
+        &:hover{
+            box-shadow: 0 0 25px rgba($color: #25bea0, $alpha: .5);
+        }
+    }
 }
 
 @mixin history () {
@@ -23,6 +43,26 @@
 }
 .horror{
     @include horror();
+    button{
+        font-weight: 600;
+        background-color: #020000;
+        color: #dd2424;
+        border: #4d0000 2px solid;
+        @include borderRadius(5px);
+        &:hover{
+            background-color: rgba($color: #4d0000, $alpha: .5)
+        }
+    }
+    h3{
+        color: #dd2424;
+        -webkit-text-stroke: .5px  #4d0000;
+    }
+    .book{
+        box-shadow: 20px 20px 10px rgba($color: #4d0000, $alpha: .5);
+        &:hover{
+            box-shadow: 0 0 25px rgba($color: #4d0000, $alpha: .5);
+        }
+    }
 }
 
 @mixin romance () {
