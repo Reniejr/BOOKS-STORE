@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react'
 import './Navbar.scss'
 import '../../../Style/_ClassStyles.scss'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
-export default class Navbar extends PureComponent {
+class Navbar extends PureComponent {
     render() {
+        console.log(this.props)
         return (
             <nav>
                 <div className="logo">
@@ -35,3 +36,5 @@ export default class Navbar extends PureComponent {
         )
     }
 }
+
+export default withRouter(Navbar)

@@ -5,6 +5,7 @@ import Category from '../../HomePage_SubComponents/Categories/Category'
 import Footer from '../../_GENERAL_SUB_COMPONENTS/Footer/Footer'
 import PageLoader from '../../_GENERAL_SUB_COMPONENTS/PageLoader/PageLoader'
 import { homeBooksAnimation, navScroll } from '../../../Utilities/OnScroll/OnScroll'
+import { deactivateClass } from '../../../Utilities/General/General'
 
 
 export default class HomePage extends PureComponent {
@@ -15,6 +16,7 @@ export default class HomePage extends PureComponent {
 
     goToCategoryPage = (category) => {
         this.setState({loader : true})
+        deactivateClass('nav', 'transparent')
         setTimeout(() => {
             this.props.history.push('/category/' + category)
         }, 2000)
@@ -23,7 +25,7 @@ export default class HomePage extends PureComponent {
     componentDidMount(){
         window.onscroll = () => {
             homeBooksAnimation()
-            navScroll()
+            navScroll('transparent')
         }
     }
     componentWillUnmount(){

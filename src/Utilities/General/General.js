@@ -26,3 +26,9 @@ export const chunkArray = (array, value) => {
     console.log(chunkContainer)
     return chunkContainer
 }
+
+//DEACTIVATE CLASS
+export const deactivateClass = (elem, classAnimation) => {
+    let domNode = document.querySelector(elem)
+    domNode.classList.remove(classAnimation)
+}

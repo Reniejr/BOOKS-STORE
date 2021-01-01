@@ -30,14 +30,15 @@ export const categoryPageScroll = () => {
     inRangeY('.preview', 'detailFixed')
 }
 
-export const navScroll = () => {
+export const navScroll = (classAnimation) => {
     let x_axis = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
         y_axis = document.documentElement.scrollTop || document.body.scrollTop || 0
     //NAVBAR
     const navBar = document.querySelector('nav')
     y_axis > 64 
-    ? navBar.classList.add('transparent')
-    : navBar.classList.remove('transparent')
+    ? navBar.classList.add(classAnimation)
+    : navBar.classList.remove(classAnimation)
     // console.log(x_axis, y_axis)
 }
+
 

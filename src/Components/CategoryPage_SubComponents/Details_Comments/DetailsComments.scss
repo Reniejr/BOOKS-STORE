@@ -1,5 +1,9 @@
 @import '../../../Style/Positions';
 .preview{
     @include flexCentered(column);
-    
+    overflow-y: auto;
+    padding-top: 64px;
+    h2{
+        font-size: 1rem;
+    }
 }

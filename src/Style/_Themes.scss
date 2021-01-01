@@ -15,6 +15,9 @@
             background-color: rgba($color: #25bea0, $alpha: .5)
         }
     }
+    .button-active{
+        background-color: rgba($color: #25bea0, $alpha: .5)
+    }
     h3{
         color: #374353;
         -webkit-text-stroke: .5px #25bea0;
@@ -34,6 +37,28 @@
 }
 .history{
     @include history();
+    button{
+        font-weight: 600;
+        background-color: white;
+        border: #ff4838 2px solid;
+        @include borderRadius(5px);
+        &:hover{
+            background-color: rgba($color: #ff4838, $alpha: .5)
+        }
+    }
+    .button-active{
+        background-color: rgba($color: #ff4838, $alpha: .5)
+    }
+    h3{
+        color: #162b32;
+        -webkit-text-stroke: .5px #ff4838;
+    }
+    .book{
+        box-shadow: 10px 10px 20px rgba($color: #ff4838, $alpha: .5);
+        &:hover{
+            box-shadow: 0 0 25px rgba($color: #ff4838, $alpha: .5);
+        }
+    }
 }
 
 @mixin horror () {
@@ -53,6 +78,10 @@
             background-color: rgba($color: #4d0000, $alpha: .5)
         }
     }
+    .button-active{
+        background-color: rgba($color: #4d0000, $alpha: .5)
+    }
+
     h3{
         color: #dd2424;
         -webkit-text-stroke: .5px  #4d0000;
@@ -72,6 +101,30 @@
 }
 .romance{
     @include romance();
+    button{
+        font-weight: 600;
+        background-color: #fbc8d6;
+        color: #f70424;
+        border:  #f0a1a5 2px solid;
+        @include borderRadius(5px);
+        &:hover{
+            background-color: rgba($color:  #f0a1a5, $alpha: .5)
+        }
+    }
+    .button-active{
+        background-color: rgba($color:  #f0a1a5, $alpha: .5)
+    }
+
+    h3{
+        color: #f70424;
+        -webkit-text-stroke: .5px   #f0a1a5;
+    }
+    .book{
+        box-shadow: 20px 20px 10px rgba($color: #f70424, $alpha: .5);
+        &:hover{
+            box-shadow: 0 0 25px rgba($color: #f70424, $alpha: .5);
+        }
+    }
 }
 
 @mixin scifi () {
@@ -82,4 +135,28 @@
 }
 .scifi{
     @include scifi();
+    button{
+        font-weight: 600;
+        background-color: #01012b;
+        color: #d1f7ff;
+        border:  #ff2a6d 2px solid;
+        @include borderRadius(5px);
+        &:hover{
+            background-color: rgba($color: #d1f7ff, $alpha: .5)
+        }
+    }
+    .button-active{
+        background-color: rgba($color: #d1f7ff, $alpha: .5)
+    }
+
+    h3{
+        color: #d1f7ff;
+        -webkit-text-stroke: .5px   #05d9e8;
+    }
+    .book{
+        box-shadow: 20px 20px 10px rgba($color:#05d9e8, $alpha: .5);
+        &:hover{
+            box-shadow: 0 0 25px rgba($color:#05d9e8, $alpha: .5);
+        }
+    }
 }

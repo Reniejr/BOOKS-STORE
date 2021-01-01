@@ -24,10 +24,11 @@ export default class CategoryPage extends PureComponent {
         page:[],
         selectedBook:{
             title: 'No Book Selected',
-            img:'',
+            img:'./assets/images/bg.jpg',
             asin:'',
             price:''
-        }
+        },
+        impaginationNumb: 1
     }
 
     getChunkData = async () =>{
@@ -38,7 +39,7 @@ export default class CategoryPage extends PureComponent {
     }
 
     selectPage = (index) => {
-        this.setState({page : this.state.chunkContainer[index]})
+        this.setState({page : this.state.chunkContainer[index], impaginationNumb : (index+1)})
     }
 
     selectBooks = (book) => {
@@ -51,12 +52,13 @@ export default class CategoryPage extends PureComponent {
         this.setState({chunkContainer : chunkContainer, page: chunkContainer[0]})
         window.onscroll = () => {
             categoryPageScroll()
-            navScroll()
         }
     }
     
     render() {
         // console.log(this.props)
+        const style = this.props.match.params.category === 'fantasy' || this.props.match.params.category === 'history' 
+        ? 'whitesmoke' : '' 
         return (
             <div 
             id='category-page'
@@ -64,12 +66,18 @@ export default class CategoryPage extends PureComponent {
             >
                 <JumboCategory/>
                 <Row>
-                    <Col xs={12} sm={8} className='books-impagination'>
+                    <Col xs={12} sm={8} 
+                    className='books-impagination'
+                    style={{
+                        backgroundColor: style
+                    }}
+                    >
                         <div className="impagination">
                             {this.state.chunkContainer.map((chunk, index) => {
                                 return(
                                     <button 
                                     onClick={()=>this.selectPage(index)}
+                                    className={this.state.impaginationNumb === (index + 1) ? 'button-active' : ''}
                                     >
                                         {(index + 1)}
                                     </button>
@@ -91,6 +99,7 @@ export default class CategoryPage extends PureComponent {
                                 return(
                                     <button 
                                     onClick={()=>this.selectPage(index)}
+                                    className={this.state.impaginationNumb === (index + 1) ? 'button-active' : ''}
                                     >
                                         {(index + 1)}
                                     </button>
@@ -99,7 +108,13 @@ export default class CategoryPage extends PureComponent {
                         </div>
                            
                     </Col>
-                    <Col xs={12} sm={4} className='books-details-comments'>
+                    <Col 
+                    xs={12} sm={4} 
+                    className='books-details-comments'
+                    style={{
+                        backgroundColor: style
+                    }}
+                    >
                         {this.state.selected.asin 
                         ? <div>No Selected</div>
                         : <DetailsComments selected={this.state.selectedBook}/>
